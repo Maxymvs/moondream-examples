@@ -1,3 +1,0 @@
-moondream
-pillow
-modal
