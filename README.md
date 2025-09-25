@@ -12,7 +12,7 @@ Get started with Moondream's vision AI in Node in minutes.
 2. Install dependencies:
 
    ```bash
-   npm install
+   bun install
    ```
 
 3. Tweak the `main.js` code if you want to run it on cloud.
@@ -21,5 +21,5 @@ Get started with Moondream's vision AI in Node in minutes.
 
    ```bash
    cp .env.local.example .env.local # then add your key or endpoint override
-   npm run run
-   ```
+   bun run start
+  ```

@@ -6,22 +6,22 @@
 - `package.json` defines scripts and dependencies. Keep client code in the project root unless you introduce additional modules—place shared helpers under `src/` if you expand the example suite.
 
 ## Build, Test, and Development Commands
-- `npm install` resolves the `moondream` SDK and peers; rerun after changing dependencies.
-- `npm run run` executes `main.js`. Pass flags (e.g., `MOONDREAM_API_KEY`) as environment variables: `MOONDREAM_API_KEY=... npm run run`.
-- `node --watch main.js` is useful for rapid iteration when testing variations.
+- `bun install` resolves the `moondream` SDK and peers; rerun after changing dependencies.
+- `bun run start` executes `main.js`. Pass flags (e.g., `MOONDREAM_API_KEY`) as environment variables: `MOONDREAM_API_KEY=... bun run start`.
+- `bun run dev` keeps the script hot-reloading while you tweak the example.
 
 ## Coding Style & Naming Conventions
 - Target ES2022 syntax with ESM imports. Use 2-space indentation and prefer `const` for immutable references.
 - Name files and helpers in `camelCase` (`captionImage.js`) and exported symbols in `camelCase` or `PascalCase` for classes.
-- Before committing, format with `npx prettier --write main.js` if you touch example code.
+- Before committing, format with `bunx prettier --write main.js` if you touch example code.
 
 ## Testing Guidelines
-- No automated tests exist yet. For new examples, include minimal smoke tests using `node --eval` scripts or add a lightweight runner under `tests/` that asserts API responses.
+- No automated tests exist yet. For new examples, add lightweight smoke scripts under `tests/` and execute them with `bun run tests/<script>.js` to assert API responses.
 - Document manual test steps in code comments or PR descriptions when adding features.
 
 ## Commit & Pull Request Guidelines
 - Follow conventional-style imperatives (`feat: add cloud demo config`). Group related edits—credentials, assets, and code—in the same commit.
-- PRs should describe the scenario exercised (local Station vs. Cloud), list manual verification (`npm run run` output), and attach screenshots or response samples if behavior changes.
+- PRs should describe the scenario exercised (local Station vs. Cloud), list manual verification (`bun run start` output), and attach screenshots or response samples if behavior changes.
 - Reference relevant issues or TODOs. Flag any new secrets or configuration knobs so reviewers can validate deployment expectations.
 
 ## Security & Configuration Tips
